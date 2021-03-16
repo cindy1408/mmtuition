@@ -1,0 +1,102 @@
+* {
+	box-sizing: border-box;
+	background-color: black;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  #layout{
+  margin: 0 10%;
+  
+  }
+  
+  img {
+	  max-width: 100%;
+	  max-height: 100%;
+	  display: block;    
+  }
+  
+  #heading{
+	  width:100%;
+	  display: flex;
+	  justify-content: center;
+	  margin: 0px auto;
+	  border-bottom: solid white 2px;
+	  margin-bottom: 20px;
+  
+	  }
+   
+  nav {
+		  max-width: 15%;
+	  }
+  
+  ul {	
+	  float:left;
+		list-style-type: none;
+	  margin: 0;
+		padding: 0;
+	  width: 100%;
+		background-color: #000000;
+	  border-left:2px solid #FFFFFF;
+	  }
+	  
+  li a {
+		display: block;
+		color: #fff;
+		padding: 18px 16px;
+		text-decoration: none;
+	  }
+  
+		  /* Change the link color on hover */
+			  li a:hover {
+				background-color: #555;
+				color: white;
+	  }
+  
+		  #current{background-color:#555;
+			  color:white;
+	  }
+
+		/*main{text-align:center;
+			margin-right: 80px;
+    }*/
+    
+
+	#content {
+		display: inline-flex;
+		width: 70%;
+		justify-content: space-around;
+	}
+	
+	#contactus {
+            border-width: 2px;
+            border-color: aliceblue;
+            border-style: dashed;
+            padding:5px;
+            width:350px;
+            height:380px;
+            text-align: center;
+			color: white;
+    }
+    
+    #contactyou {
+            border-width: 2px;
+            border-color: aliceblue;
+            border-style: dashed;
+            padding:5px;
+            width: 350px;
+            height:380px;
+            text-align:center;
+			color: white;
+   }
+	
+   #contactyou input {
+	   background-color: white;
+   }
+
+
+	footer {
+		clear: both;
+		text-align:center;
+		color: white;
+	}

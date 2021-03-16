@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Maths and Music Tuition</title>
+	<meta charset="utf-8">
+	<link rel = "stylesheet" href = "booknow.css">
+</head>
+
+
+<body>
+
+	<div id = "layout">
+		<div id="heading">
+			<%- include('./partials/head') %>
+		</div>
+
+		<%- include('./partials/nav') %>
+
+
+	<main>
+		<div id = bookNowForm>
+			<div id = "information">
+				<h1><i>Book now!</i></h1>
+				<p><i>Please leave your name, email address and the potential dates and times you are available.<br> We will respond back to you within 2 business days. </i></p>
+			</div>
+			
+			<form action="/form" method="POST">
+				<div>
+					<label for="firstName">First Name:</label>
+					<input type
+					="text" name="firstName" id="firstName" required placeholder="First Name">
+				</div>	
+
+				<div>
+					<label for="lastName">Last Name:</label>
+					<input type="text" name="lastName" id="lastName" required placeholder="Last Name">
+				</div>
+				<div>
+					<label for="email">E-mail:</label>
+					<input type="email" name="email" id="email" required email placeholder="john.smith@gmail.com">
+				</div>
+				<div>
+					<label for="Subject">Subject:</label>
+				
+					<select id="Subject">
+						<option value="Select">Select</option>
+						<option value="Maths KS3">Maths(KS3)</option>
+						<option value="Maths GCSE">Maths (GCSE or ADDMATHS)</option>
+						<option value="Maths AS/A Level">Maths (AS/A-Levels)</option>
+						<option value="Piano Classical">Classical Piano</option>
+						<option value="Piano Jazz">Jazz Piano</option>
+						<option value="Classical Guitar">Classical Guitar</option>
+					</select>
+				</div>
+				<div>
+  					<label for="comments">Available dates:</label>
+  				
+					<textarea name="comments" id="comments" rows="4" cols="25"></textarea>
+				</div>
+      
+        			<button>Book Now!</button>  
+			</form>
+
+		</div>
+	</main>
+
+
+<footer> 
+<br><br>
+
+<div id="footer">
+
+Copyright &copy Maths and Music Tuition 2021
+
+</footer>
+</div>
+</body>
+</html>

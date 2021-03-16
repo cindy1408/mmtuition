@@ -1,0 +1,19 @@
+{
+  "name": "mmtuition",
+  "version": "1.0.0",
+  "main": "booknow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cindy Cheung",
+  "license": "ISC",
+  "description": "database",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "enum": "^3.0.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {}
+}
