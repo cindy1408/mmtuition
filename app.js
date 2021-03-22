@@ -18,7 +18,7 @@ const dbURI = 'mongodb+srv://Windy:L1Gx2.fr023N.@cluster0.kprsc.mongodb.net/mmtu
 //{useNewUrlParser: true, useUnifiedTopology: true} arguments stops the deprecation warnings
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 //listen for request
-    .then((result) => app.listen(3000))
+    .then((result) => app.listen(3001))
     .catch((err) => console.log(err))
 
 //register view engine
