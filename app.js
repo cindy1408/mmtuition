@@ -6,12 +6,17 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 //import review module 
 const Review = require('./models/reviews');
-
+const Path = require('path');
 const Form = require('./models/form');
-//const { Router } = require('express');
- 
+const axios = require ('axios');
+//body-parser
+const bodyParser = require('body-parser');
+//nodemailer
+const nodemailer = require('nodemailer');
+
 //express app 
-const app = express()
+const app = express();
+const router = express.Router();
 
 //connect to Mongodb
 const dbURI = 'mongodb+srv://Windy:L1Gx2.fr023N.@cluster0.kprsc.mongodb.net/mmtuition?retryWrites=true&w=majority'
@@ -30,6 +35,50 @@ app.use(express.urlencoded({extended: true}));
 
 //using middleware
 app.use(morgan('dev'));
+
+router.get('/form', (req, res) => {
+    res.sendFile('bookNow.ejs');
+    //To access GET variable use req.query() and req.params() methods.
+})
+
+app.use("/", router);
+
+
+//bodyParser middleware 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+
+//post form 
+
+router.post('/form', (req, res) => {
+    let fullName = req.form.fullName.value;
+    let phone = req.form.phone.value;
+    let email = req.form.email.value;
+    let subject = req.form.subject.value;
+    let comments = req.form.comments.value;
+    
+    const form = {
+        from: "cindycheung1408@gmail.com", 
+        to: "cindycheung1408@gmail.com",
+        subject: "form submitted",
+        text: message
+    }
+
+    transporter.sendMail(mail, (err, data) => {
+        if(err) {
+            res.json({
+                status: 'fail'
+            }) 
+            }else {
+                res.json({
+                    status: 'success'
+                })
+            }
+        }
+    )
+
+});
 
 
 //routes
@@ -52,6 +101,23 @@ app.get('/whyus', (req, res) => {
 app.get('/contactus', (req, res) => {
     res.render('contactus');
 });
+
+
+//data parsing
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+app.post('/email', (req, res) => {
+    //send email
+    res.json({message: 'Message received!!'})
+})
+
+//defining a route with nodemailer
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'booknow.ejs'));
+});
+
 //review route
 
 app.get('/reviews', (req, res) => {

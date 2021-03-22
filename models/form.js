@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const formSchema = new Schema ({
-    firstName: {
+    fullName: {
         type: 'string',
         required: true
     },
-    lastName: {
-        type: 'string',
+    phone: {
+        type: 'number',
         required: true
     },
     email: {
@@ -20,7 +20,7 @@ const formSchema = new Schema ({
         enum: ['Maths KS3', 'Maths GCSE', 'Maths AS/A Level', 'Piano Classical', 'Piano Jazz', 'Classical Guitar'],
         required: true
     },
-    comment: {
+    comments: {
         type: 'string',
         required: true
     }

@@ -25,25 +25,25 @@
 				<p><i>Please leave your name, email address and the potential dates and times you are available.<br> We will respond back to you within 2 business days. </i></p>
 			</div>
 			
-			<form action="/formsubmitted" method="POST">
+			<form action="/form" method="POST">
 				<div>
-					<label for="fullName">Full Name:</label>
+					<label for="firstName">First Name:</label>
 					<input type
-					="text" name="fullName" id="fullName" required placeholder="John Smith">
+					="text" name="firstName" id="firstName" required placeholder="First Name">
 				</div>	
 
 				<div>
-					<label for="phone">Phone Number:</label>
-					<input type="text" name="phone" id="phone" required placeholder="XXX-XXX-XXXX">
+					<label for="lastName">Last Name:</label>
+					<input type="text" name="lastName" id="lastName" required placeholder="Last Name">
 				</div>
 				<div>
 					<label for="email">E-mail:</label>
 					<input type="email" name="email" id="email" required email placeholder="john.smith@gmail.com">
 				</div>
 				<div>
-					<label for="subject">Subject:</label>
+					<label for="Subject">Subject:</label>
 				
-					<select id="subject" name = "subject">
+					<select id="Subject">
 						<option value="Select">Select</option>
 						<option value="Maths KS3">Maths(KS3)</option>
 						<option value="Maths GCSE">Maths (GCSE or ADDMATHS)</option>
@@ -56,40 +56,11 @@
 				<div>
   					<label for="comments">Available dates:</label>
   				
-					<textarea name="comments" id="comment" rows="4" cols="25"></textarea>
+					<textarea name="comments" id="comments" rows="4" cols="25"></textarea>
 				</div>
       
-        			<button type = "submit" value="Submit">Book Now!</button>  
+        			<button>Book Now!</button>  
 			</form>
-
-			
-			<script>
-			
-			function submitForm(e, form) {
-				e.preventDefault();
-
-			fetch("/form", {
-  					method: "post",
-					headers: {
-						'Content-Type': 'application/json'
-					},
-
-					//make sure to serialize your JSON body
-					body: JSON.stringify({
-						fullName: form.fullName.value,
-						phone: form.phone.value,
-						email: form.email.value,
-						subject: form.subject.value,
-						comment: form.comment.value
-					})
-					})
-					.then( (data) => { 
-					
-						console.log(data);
-					})
-			};
-
-			</script>
 
 		</div>
 	</main>
